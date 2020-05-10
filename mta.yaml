@@ -1,0 +1,27 @@
+ID: produto_29
+_schema-version: '2.0'
+version: 0.0.1
+modules:
+  - name: mod_29_web
+    type: html5
+    path: mod_29_web
+    parameters:
+      app-name: modulo_29_web
+      memory: 32M
+      disk-quota: 32M
+
+  - name: mode_29_db
+    type: hdb
+    path: mode_29_db
+    requires:
+     - name: hdi_mode_29_db
+
+
+resources:
+ - name: hdi_mode_29_db
+   parameters:
+      config:
+         schema: PRODUTO_29
+   properties:
+      hdi-container-name: ${service-name}
+   type: com.sap.xs.hdi-container
